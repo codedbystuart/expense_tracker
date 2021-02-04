@@ -1,8 +1,10 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node": true
     },
+    "plugins": ["import"],
     "extends": [
         "airbnb-base"
     ],
@@ -11,5 +13,8 @@
         "sourceType": "module"
     },
     "rules": {
+        "comma-dangle": 1,
+        "Quotes": 1,
+        "no-unused-vars": 0
     }
 }
