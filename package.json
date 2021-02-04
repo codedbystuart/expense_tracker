@@ -8,7 +8,7 @@
     "test": "nyc mocha --require babel-core/register test/**.spec.js --exit",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov",
     "prestart": "npm run lint && npm run build",
-    "start": "nodemon --exec babel-node build/app.js",
+    "start": "nodemon app.js",
     "build": "babel app.js --out-dir build",
     "lint": "eslint app.js"
   },
