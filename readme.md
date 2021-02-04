@@ -3,6 +3,8 @@ Expenses tracker, is an application that enables a user to track his expenses an
 
 In this application, I demonstrate Test Driven Development and writing of clean code.
 
+[![Coverage Status](https://coveralls.io/repos/github/codedbystuart/expense_tracker/badge.svg?branch=main)](https://coveralls.io/github/codedbystuart/expense_tracker?branch=main)
+
 ## Requirements
 The application uses the following tools:
 * Nodejs v12 or later

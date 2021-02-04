@@ -5,8 +5,12 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "test": "nyc mocha --require babel-core/register test/**.spec.js --exit",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov",
+    "prestart": "npm run lint && npm run build",
+    "start": "nodemon --exec babel-node build/app.js",
+    "build": "babel app.js --out-dir build",
+    "lint": "eslint app.js"
   },
   "keywords": [
     "Finance",
@@ -17,13 +21,35 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "coveralls": "^3.1.0",
     "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^15.1.0",
+    "request": "^2.88.2",
+    "require.js": "^1.0.0",
     "sequelize": "^6.5.0",
     "sqlite3": "^5.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/node": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "babel-watch": "^7.3.1",
+    "chai": "^4.3.0",
+    "chai-http": "^4.3.0",
     "eslint": "^7.19.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.2.1"
+  },
+  "nyc": {
+    "exclude": [
+      "**/test/**"
+    ]
   }
 }

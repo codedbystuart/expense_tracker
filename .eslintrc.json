@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "mocha": true
     },
     "plugins": ["import"],
     "extends": [
@@ -12,9 +13,13 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
     "rules": {
         "comma-dangle": 1,
-        "Quotes": 1,
-        "no-unused-vars": 0
+        "Quotes": 0,
+        "no-unused-vars": 2
     }
 }
