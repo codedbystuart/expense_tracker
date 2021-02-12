@@ -1,10 +1,9 @@
 import Sequelize from 'sequelize';
+import sequelize from '../database/config';
 
-const sequelize = new Sequelize('sqlite:chinook.db');
-
-const User = sequelize.define('user', {
+export default sequelize.define('user', {
   id: {
-    field: 'Id',
+    field: 'UserId',
     type: Sequelize.INTEGER,
     primaryKey: true,
   },
@@ -21,5 +20,3 @@ const User = sequelize.define('user', {
     type: Sequelize.STRING,
   },
 }, { timestamps: true });
-
-export default User;
